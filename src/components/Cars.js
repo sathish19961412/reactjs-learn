@@ -1,10 +1,14 @@
-import React, { Fragment } from "react";
+import React from "react";
 
-function Cars(){
+function Cars(props){
+
+    // const {brand,color} = props
+    const {Carinfo} = props
+    const {brand,color}= Carinfo
+    
+    const text=`Hi, Im a ${color} ${brand} Car`;
     return(
-        <Fragment>
-            <h2>Hi,I am Car</h2>
-        </Fragment>
+        <h2>{text}</h2>
     );
 }
 
