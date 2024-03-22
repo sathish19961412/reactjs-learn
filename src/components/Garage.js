@@ -14,6 +14,11 @@ function Garage(){
         type:"Fuji",
         color:"green"
     }
+    const carList=[
+        {brand:"BMW",color:"Red"},
+        {brand:"Ford",color:"Green"},
+        {brand:"Tesla",color:"Black"},
+    ]
     const showCarInfo = Carinfo.brand !==undefined && Carinfo.color !==undefined;
     return(       
         <Fragment>
@@ -23,6 +28,9 @@ function Garage(){
             { showCarInfo && <Cars Carinfo={Carinfo}/>}
             <Apple appleInfo={appleInfo} />
             {isDoorOpened?<h2>Garage door is Open</h2>:<h2>Garage door is Close</h2>}
+            <ul>
+                <li><Cars/></li>
+            </ul>
         </Fragment>
     );
 }
