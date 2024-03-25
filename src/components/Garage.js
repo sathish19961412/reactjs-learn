@@ -19,6 +19,7 @@ function Garage(){
         {brand:"Ford",color:"Green"},
         {brand:"Tesla",color:"Black"},
     ]
+    const numberList=[1,2,3,4,5,6];
     const showCarInfo = Carinfo.brand !==undefined && Carinfo.color !==undefined;
     return(       
         <Fragment>
@@ -29,7 +30,10 @@ function Garage(){
             <Apple appleInfo={appleInfo} />
             {isDoorOpened?<h2>Garage door is Open</h2>:<h2>Garage door is Close</h2>}
             <ul>
-                <li><Cars/></li>
+                {carList.map((carinfo)=><li key={carinfo.brand}><Cars Carinfo={carinfo}/></li>)}
+            </ul>
+            <ul>
+                {numberList.map((e,index)=><p key={index}>{e}</p>)}
             </ul>
         </Fragment>
     );
